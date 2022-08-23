@@ -26,7 +26,7 @@ class FirstRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+      backgroundColor: Colors.black54,
       appBar: AppBar(
         title: Text('First Route'),
         centerTitle: true,
@@ -35,7 +35,10 @@ class FirstRoute extends StatelessWidget {
 
         child: ElevatedButton(
           child: Text('Open Route'),
-          onPressed: (){},
+          onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => SecondRoute() ),);
+          },
+          // Navigate to second route when tapped.
         ),
       ),
     );
@@ -47,14 +50,19 @@ class SecondRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.purple,
       appBar: AppBar(
         title: Text('Second Route'),
         centerTitle: true,
       ),
       body: Center(
+
         child: ElevatedButton(
           child: Text('Go Back Route'),
-          onPressed: (){},
+          onPressed: (){
+            //Navigator.pop(context);
+          },
+          // Navigate to first route when tapped.
         ),
       ),
     );
